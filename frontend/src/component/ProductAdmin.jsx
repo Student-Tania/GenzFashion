@@ -13,7 +13,9 @@ export default function ProductAdmin() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/products/all");
+      const res = await axios.get(
+        "https://genzfashion-umr7.onrender.com/api/products/all"
+      );
       setProducts(res.data);
     } catch (err) {
       console.error("Fetch error:", err);
@@ -31,8 +33,8 @@ export default function ProductAdmin() {
       product.images.forEach((img) => formData.append("images", img));
 
       const url = isUpdating
-        ? `http://localhost:3000/api/products/update/${editProduct._id}`
-        : "http://localhost:3000/api/products/add";
+        ? `https://genzfashion-umr7.onrender.com/api/products/update/${editProduct._id}`
+        : "https://genzfashion-umr7.onrender.com/api/products/add";
 
       const method = isUpdating ? axios.put : axios.post;
 
@@ -59,7 +61,9 @@ export default function ProductAdmin() {
     if (!window.confirm("Are you sure you want to delete this product?"))
       return;
     try {
-      await axios.delete(`http://localhost:3000/api/products/delete/${id}`);
+      await axios.delete(
+        `https://genzfashion-umr7.onrender.com/api/products/delete/${id}`
+      );
       fetchProducts();
       setMessage("🗑️ Product deleted!");
       setTimeout(
