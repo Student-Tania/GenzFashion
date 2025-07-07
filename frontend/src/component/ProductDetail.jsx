@@ -251,12 +251,17 @@ export default function ProductDetail({ isLoggedIn, setCartItems }) {
 const styles = {
   container: {
     display: "flex",
+    flexDirection: "row",
     flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "flex-start",
     padding: "40px 20px",
     gap: "30px",
     fontFamily: "Arial, sans-serif",
     background: "linear-gradient(to bottom right, #f0f0ff, #e9f5f2)",
+    minHeight: "100vh",
   },
+
   left: {
     flex: "1",
     minWidth: "300px",
@@ -278,18 +283,20 @@ const styles = {
     width: "100%",
     display: "flex",
     justifyContent: "center",
-    border: "4px solid red",   // ← ADD THIS TEMPORARILY
-  },   
+    border: "4px solid red", // ← ADD THIS TEMPORARILY
+  },
   image: {
     width: "100%",
-    maxWidth: "600px",
+    maxWidth: "300px",
     height: "auto",
     borderRadius: "10px",
     boxShadow: "0 8px 20px rgba(0,0,0,0.05)",
-  },
+    objectFit: "cover",
+  },  
   right: {
     flex: "1",
     minWidth: "300px",
+    maxWidth: "500px", // 👈 prevent it from being full-width on desktop
     padding: "20px",
     background: "#fff",
     borderRadius: "10px",
