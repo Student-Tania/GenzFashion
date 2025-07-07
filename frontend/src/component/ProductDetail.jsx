@@ -280,7 +280,6 @@ const styles = {
     padding: "10px",
     borderRadius: "10px",
     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-    width: "100%",
     display: "flex",
     justifyContent: "center",
   },
