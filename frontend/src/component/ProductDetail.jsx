@@ -278,7 +278,8 @@ const styles = {
     width: "100%",
     display: "flex",
     justifyContent: "center",
-  },  
+    border: "4px solid red",   // ← ADD THIS TEMPORARILY
+  },   
   image: {
     width: "100%",
     maxWidth: "600px",
