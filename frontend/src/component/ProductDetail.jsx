@@ -281,7 +281,7 @@ const styles = {
   },
   image: {
     width: "100%",
-    maxWidth: "400px",
+    maxWidth: "100%",
     height: "auto",
     borderRadius: "10px",
     boxShadow: "0 8px 20px rgba(0,0,0,0.05)",
