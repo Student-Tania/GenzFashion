@@ -124,7 +124,6 @@ export default function ProductDetail({ isLoggedIn, setCartItems }) {
 
   return (
     <div style={styles.container}>
-      <h1>Debug Build Check</h1> {/* ← temporary test */}
       <div style={styles.left}>
         <div style={styles.galleryWrapper}>
           {product.images?.map((img, index) => (
