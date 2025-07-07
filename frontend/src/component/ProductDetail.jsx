@@ -277,8 +277,9 @@ const styles = {
     borderRadius: "10px",
     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
     width: "100%",
-    maxWidth: "220px",
-  },
+    display: "flex",
+    justifyContent: "center",
+  },  
   image: {
     width: "100%",
     maxWidth: "600px",
