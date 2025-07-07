@@ -20,10 +20,35 @@ function App() {
   const [userRole, setUserRole] = useState("");
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const checkSession = async () => {
+      try {
+        const res = await axios.get("http://localhost:3000/api/auth/check", {
+          withCredentials: true,
+        });
+
+        if (res.data.loggedIn) {
+          setIsLoggedIn(true);
+          setUserRole(res.data.user.role);
+        } else {
+          setIsLoggedIn(false);
+          setUserRole("");
+        }
+      } catch (err) {
+        console.error("Session check failed:", err);
+        setIsLoggedIn(false);
+        setUserRole("");
+      }
+    };
+
+    checkSession();
+  }, []);
+
   const handleLogout = async () => {
     try {
       await axios.post(
-        "https://genzfashion-umr7.onrender.com/api/auth/logout",
+        "http://localhost:3000/api/auth/logout",
         {},
         {
           withCredentials: true,
@@ -45,12 +70,9 @@ function App() {
         return;
       }
       try {
-        const res = await axios.get(
-          "https://genzfashion-umr7.onrender.com/api/cart",
-          {
-            withCredentials: true,
-          }
-        );
+        const res = await axios.get("http://localhost:3000/api/cart", {
+          withCredentials: true,
+        });
 
         const validItems = (res.data.cartItems || []).filter(
           (item) => item.productId !== null

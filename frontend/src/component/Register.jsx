@@ -48,10 +48,7 @@ export default function Register() {
     }
 
     try {
-      const response = await axios.post(
-        "https://genzfashion-umr7.onrender.com/api/auth/register",
-        form
-      );
+      const response=await axios.post("http://localhost:3000/api/auth/register", form);
       setError("");
       setSuccess(response.data.message);
       setTimeout(() => {

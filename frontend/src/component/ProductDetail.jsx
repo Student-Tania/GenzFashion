@@ -16,7 +16,7 @@ export default function ProductDetails({ isLoggedIn, setCartItems }) {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get(`https://genzfashion-umr7.onrender.com/api/products/${id}`)
+      .get(`http://localhost:3000/api/products/${id}`)
       .then((res) => setProduct(res.data))
       .catch((err) => console.error("Product not found", err));
   }, [id]);
@@ -24,9 +24,7 @@ export default function ProductDetails({ isLoggedIn, setCartItems }) {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const res = await axios.get(
-          `https://genzfashion-umr7.onrender.com/api/review/${id}`
-        );
+        const res = await axios.get(`http://localhost:3000/api/review/${id}`);
         setReviews(res.data.reviews);
 
         // Calculate average rating
@@ -75,7 +73,7 @@ export default function ProductDetails({ isLoggedIn, setCartItems }) {
     }
     try {
       const res = await axios.post(
-        "https://genzfashion-umr7.onrender.com/api/cart/add",
+        "http://localhost:3000/api/cart/add",
         { productId: product._id, size: selectedSize, quantity: quantity },
         { withCredentials: true }
       );
@@ -83,12 +81,9 @@ export default function ProductDetails({ isLoggedIn, setCartItems }) {
       setMessage("Added to cart successfully!");
       setMessageType("success");
       setTimeout(() => setMessage(""), 3000);
-      const cartRes = await axios.get(
-        "https://genzfashion-umr7.onrender.com/api/cart",
-        {
-          withCredentials: true,
-        }
-      );
+      const cartRes = await axios.get("http://localhost:3000/api/cart", {
+        withCredentials: true,
+      });
       setCartItems(cartRes.data.cartItems||[]);
     } catch (err) {
       setMessage(err.response?.data?.error || "Failed to add to cart");

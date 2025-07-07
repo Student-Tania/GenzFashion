@@ -115,4 +115,13 @@ router.get("/profile",(req,res)=>{
     });
 })
 
+// session check
+router.get("/check", (req, res) => {
+  if (req.session.user) {
+    res.json({ loggedIn: true, user: req.session.user });
+  } else {
+    res.json({ loggedIn: false });
+  }
+});
+
 module.exports = router;

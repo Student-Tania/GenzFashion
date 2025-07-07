@@ -7,7 +7,7 @@ export default function Profile() {
       const fetchProfile = async () => {
         try {
           const res = await axios.get(
-            "https://genzfashion-umr7.onrender.com/api/auth/profile",
+            "http://localhost:3000/api/auth/profile",
             {
               withCredentials: true,
             }
@@ -26,7 +26,7 @@ export default function Profile() {
       const fetchOrders = async () => {
         try {
           const res = await axios.get(
-            "https://genzfashion-umr7.onrender.com/api/orders/my-orders",
+            "http://localhost:3000/api/orders/my-orders",
             {
               withCredentials: true,
             }

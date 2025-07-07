@@ -41,18 +41,12 @@ app.use(
 );
 
 // Routes
-
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/cart", cartRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/review",review)
-
-app.get("/",(req,res)=>{
-  res.send("get api")
-})
-
 // Connect DB and Start Server
 mongoose
   .connect(process.env.MONGO_URL)

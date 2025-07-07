@@ -26,7 +26,7 @@ export default function ProductUI({search})
       try {
         const query = search.trim() ? `?search=${search.trim()}` : "";
         const res = await axios.get(
-          `https://genzfashion-umr7.onrender.com/api/products${query}`
+          `http://localhost:3000/api/products${query}`
         );
         setProducts(res.data);
       } catch (error) {

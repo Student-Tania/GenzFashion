@@ -31,11 +31,7 @@ export default function Checkout() {
         ],
         totalAmount:total
       }
-      const res = await axios.post(
-        "https://genzfashion-umr7.onrender.com/api/orders/place",
-        orderData,
-        { withCredentials: true }
-      );
+      const res=await axios.post("http://localhost:3000/api/orders/place",orderData,{withCredentials:true})
       navigate("/order-success", {
         state: {
           productId,

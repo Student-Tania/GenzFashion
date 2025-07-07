@@ -9,12 +9,9 @@ export default function CartPage({setCartItems}) {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const res = await axios.get(
-          "https://genzfashion-umr7.onrender.com/api/cart",
-          {
-            withCredentials: true,
-          }
-        );
+        const res = await axios.get("http://localhost:3000/api/cart", {
+          withCredentials: true,
+        });
 
         const validItems = (res.data.cartItems || []).filter(
           (item) => item.productId !== null
@@ -63,7 +60,7 @@ export default function CartPage({setCartItems}) {
   const handleRemove = async (item) => {
     try {
       await axios.post(
-        "https://genzfashion-umr7.onrender.com/api/cart/remove",
+        "http://localhost:3000/api/cart/remove",
         {
           productId: item.productId._id,
           size: item.size,
@@ -72,12 +69,9 @@ export default function CartPage({setCartItems}) {
           withCredentials: true,
         }
       );
-      const res = await axios.get(
-        "https://genzfashion-umr7.onrender.com/api/cart",
-        {
-          withCredentials: true,
-        }
-      );
+      const res = await axios.get("http://localhost:3000/api/cart", {
+        withCredentials: true,
+      });
       // Remove from UI
       setLocalCart(res.data.cartItems || []);
       setCartItems(res.data.cartItems || []);
