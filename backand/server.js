@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://genz-fashion.vercel.app",
+    origin: "https://genz-fashion-emuf.vercel.app",
     credentials: true,
   })
 );
