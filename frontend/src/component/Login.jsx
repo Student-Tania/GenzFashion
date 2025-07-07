@@ -8,10 +8,6 @@ export default function Login({ setIsLoggedIn, setUserRole }) {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
-  //
-  const [sessionResult, setSessionResult] = useState(null);
-
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -39,14 +35,6 @@ export default function Login({ setIsLoggedIn, setUserRole }) {
       setError("");
       setIsLoggedIn(true);
       setUserRole(response.data.user.role);
-
-      //
-      const sessionCheck = await axios.get(
-        "https://genzfashion-umr7.onrender.com/api/auth/check",
-        { withCredentials: true }
-      );
-      setSessionResult(sessionCheck.data);
-
       setTimeout(() => {
         navigate("/");
       }, 1500);
@@ -101,12 +89,6 @@ export default function Login({ setIsLoggedIn, setUserRole }) {
             {loading ? "Logging in..." : "Login"}
           </button>
         </form>
-        //
-        {sessionResult && (
-          <pre style={{ fontSize: "12px", color: "black", marginTop: "10px" }}>
-            {JSON.stringify(sessionResult, null, 2)}
-          </pre>
-        )}
         <p style={{ textAlign: "center", marginTop: "10px", fontSize: "14px" }}>
           Don't have an account?{" "}
           <span
