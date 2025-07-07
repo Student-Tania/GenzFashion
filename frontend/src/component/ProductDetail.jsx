@@ -271,7 +271,7 @@ const styles = {
   },
   galleryWrapper: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+    gridTemplateColumns: "repeat(2, 1fr)",
     gap: "15px",
     justifyItems: "center",
   },
@@ -292,7 +292,7 @@ const styles = {
     borderRadius: "10px",
     boxShadow: "0 8px 20px rgba(0,0,0,0.05)",
     objectFit: "cover",
-  },  
+  },
   right: {
     flex: "1",
     minWidth: "300px",
