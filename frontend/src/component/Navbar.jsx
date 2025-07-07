@@ -42,7 +42,7 @@ export default function Navbar({isLoggedIn, onLogout, search, setSearch,userRole
               )}
               {userRole === "admin" && (
                 <Link to="/admin" style={styles.link}>
-                  Shop Control Center
+                  Store
                 </Link>
               )}
               <button onClick={onLogout} style={styles.logoutBtn}>
