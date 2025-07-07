@@ -124,6 +124,7 @@ export default function ProductDetails({ isLoggedIn, setCartItems }) {
 
   return (
     <div style={styles.container}>
+      <h1>Debug Build Check</h1> {/* ← temporary test */}
       <div style={styles.left}>
         <div style={styles.galleryWrapper}>
           {product.images?.map((img, index) => (
@@ -137,7 +138,6 @@ export default function ProductDetails({ isLoggedIn, setCartItems }) {
           ))}
         </div>
       </div>
-
       <div style={styles.right}>
         <h2>{product.title}</h2>
         <p style={styles.price}>₹{product.price}</p>
