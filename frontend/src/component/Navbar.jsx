@@ -98,7 +98,7 @@ const styles = {
   },
   logoutBtn: {
     marginLeft: "15px",
-    padding: "6px 18px",
+    padding: "6px 24px",
     background: "#fff",
     color: "#5f2c82",
     border: "none",
