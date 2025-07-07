@@ -24,9 +24,12 @@ function App() {
   useEffect(() => {
     const checkSession = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/auth/check", {
-          withCredentials: true,
-        });
+        const res = await axios.get(
+          "https://genzfashion-umr7.onrender.com/api/auth/check",
+          {
+            withCredentials: true,
+          }
+        );
 
         if (res.data.loggedIn) {
           setIsLoggedIn(true);
@@ -48,7 +51,7 @@ function App() {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "http://localhost:3000/api/auth/logout",
+        "https://genzfashion-umr7.onrender.com/api/auth/logout",
         {},
         {
           withCredentials: true,
@@ -70,9 +73,12 @@ function App() {
         return;
       }
       try {
-        const res = await axios.get("http://localhost:3000/api/cart", {
-          withCredentials: true,
-        });
+        const res = await axios.get(
+          "https://genzfashion-umr7.onrender.com/api/cart",
+          {
+            withCredentials: true,
+          }
+        );
 
         const validItems = (res.data.cartItems || []).filter(
           (item) => item.productId !== null
