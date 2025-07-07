@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios"
 import { useState ,useEffect,useRef } from "react";
-export default function ProductDetails({ isLoggedIn, setCartItems }) {
+export default function ProductDetail({ isLoggedIn, setCartItems }) {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [selectedSize, setSelectedSize] = useState("");

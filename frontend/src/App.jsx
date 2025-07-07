@@ -5,7 +5,7 @@ import ProductUI from "./component/ProductUI";
 import ProductAdmin from "./component/ProductAdmin";
 import Register from "./component/Register";
 import Login from "./component/Login";
-import ProductDetails from "./component/ProductDetail";
+import ProductDetail from "./component/ProductDetail";
 import Profile from "./component/Profile";
 import Checkout from "./component/Checkout";
 import CartPage from "./component/CartPage";
@@ -120,7 +120,7 @@ function App() {
           <Route
             path="/product/:id"
             element={
-              <ProductDetails
+              <ProductDetail
                 isLoggedIn={isLoggedIn}
                 setCartItems={setCartItems}
               />
