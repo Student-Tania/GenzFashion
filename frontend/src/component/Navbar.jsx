@@ -42,7 +42,7 @@ export default function Navbar({isLoggedIn, onLogout, search, setSearch,userRole
               )}
               {userRole === "admin" && (
                 <Link to="/admin" style={styles.link}>
-                  Store
+                  Shop Store
                 </Link>
               )}
               <button onClick={onLogout} style={styles.logoutBtn}>
@@ -98,7 +98,7 @@ const styles = {
   },
   logoutBtn: {
     marginLeft: "15px",
-    padding: "6px 24px",
+    padding: "6px 12px",
     background: "#fff",
     color: "#5f2c82",
     border: "none",
