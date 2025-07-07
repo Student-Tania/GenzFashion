@@ -89,7 +89,7 @@ const styles = {
     marginLeft: "15px",
     color: "#fff",
     textDecoration: "none",
-    fontWeight: "500",
+    fontWeight: "700",
     whiteSpace: "nowrap", // prevent text wrapping
   },
   icon: {
