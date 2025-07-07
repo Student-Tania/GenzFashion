@@ -36,6 +36,15 @@ export default function Login({ setIsLoggedIn, setUserRole }) {
       setError("");
       setIsLoggedIn(true);
       setUserRole(response.data.user.role)
+
+
+      //
+      const sessionCheck = await axios.get(
+        "https://genzfashion-umr7.onrender.com/api/auth/check",
+        { withCredentials: true }
+      );
+      console.log("Session check result (mobile):", sessionCheck.data);
+
       setTimeout(() => {
         navigate("/");
       }, 1500);
